@@ -6,9 +6,9 @@ import Skills from "./ResumeSections/Skills";
 import Projects from "./ResumeSections/Projects";
 
 function Resume() {
-  const [education, setEducation] = useState(true);
+  const [education, setEducation] = useState(false);
   const [work, setWork] = useState(false);
-  const [skills, setSkills] = useState(false);
+  const [skills, setSkills] = useState(true);
   const [projects, setProjects] = useState(false);
   function SetAllFalse() {
     setEducation(false);
@@ -22,7 +22,6 @@ function Resume() {
   }
   return (
     <Fragment>
-    
       <div className="resume-outer-section d-flex flex-column" id="resume">
         <span className="heading">Resume</span>
         <span className="subheading">My formal Bio Details</span>
@@ -48,6 +47,16 @@ function Resume() {
             <div className="d-flex flex-column">
               <span
                 className={
+                  skills === false
+                    ? "resume-options-items"
+                    : "selected resume-options-items"
+                }
+                onClick={() => ChangeState(setSkills, true)}
+              >
+                Skills
+              </span>
+              <span
+                className={
                   education === false
                     ? "resume-options-items"
                     : "selected resume-options-items"
@@ -66,16 +75,7 @@ function Resume() {
               >
                 Trainings
               </span>
-              <span
-                className={
-                  skills === false
-                    ? "resume-options-items"
-                    : "selected resume-options-items"
-                }
-                onClick={() => ChangeState(setSkills, true)}
-              >
-                Skills
-              </span>
+
               <span
                 className={
                   projects === false

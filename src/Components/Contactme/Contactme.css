@@ -56,9 +56,68 @@
   margin-top: 10px;
   width: 100%;
 }
+
 @media (max-width: 768px) {
+  .contact-me-part {
+    margin-top: 20px;
+  }
+
+  .relative-bg {
+    clip-path: none; /* clip-path causes overflow on mobile */
+    height: 100%;
+  }
+
   .contact-me-card {
     flex-direction: column;
-    height: auto; /* Optional: lets the height adjust to content */
+    width: 95%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .get-in-touch {
+    font-size: 1.8rem;
+    padding-left: 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .left-contact {
+    padding: 10px !important;
+    text-align: center;
+  }
+
+  lottie-player {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .card-contact-right {
+    width: 100%;
+    margin-top: 15px;
+    padding: 16px;
+  }
+
+  .labels {
+    font-size: 1rem;
+  }
+
+  .input-group {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .button-class button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .get-in-touch {
+    font-size: 1.5rem;
+  }
+
+  .contact-me-card {
+    box-shadow: none;
   }
 }

@@ -24,6 +24,7 @@ const Portfolio = () => {
       <Resume />
       <Project />
       <Testimonial />
+
       <ConatctMe />
       <Footer />
     </Fragment>
