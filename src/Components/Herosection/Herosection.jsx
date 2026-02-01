@@ -1,12 +1,16 @@
 import "./Herosection.css";
 import Typed from "react-typed";
-import { FaSquareFacebook, FaLinkedin } from "react-icons/fa6";
+import {
+  FaSquareFacebook,
+  FaLinkedin,
+  FaSquareGooglePlus,
+} from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
-// import {  } from "react-icons/fa6";
+
 const Herosection = () => {
   return (
     <div className="App" id="home">
-      <div className="herosection px-10 py-5 ">
+      <div className="herosection px-10  ">
         <div className="herosection-2 row justify-content-center">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <div className="d-flex flex-column justify-content-center I-m-text">
@@ -24,7 +28,7 @@ const Herosection = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <i className="fa-brands fa-google-plus-g"></i>
+                    <FaSquareGooglePlus color="white" />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/kumar-gaurav-22a0751a7/"

@@ -22,8 +22,8 @@ const Portfolio = () => {
       <Herosection />
       <AboutMe />
       <Resume />
-      <Project />
-      <Testimonial />
+      {/* <Project /> */}
+      {/* <Testimonial /> */}
 
       <ConatctMe />
       <Footer />
