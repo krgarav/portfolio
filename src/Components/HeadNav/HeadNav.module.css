@@ -26,3 +26,92 @@
     flex-direction: column;
   }
 }
+
+
+/* ===== Mobile Side Menu ===== */
+:root {
+  --primary-app-color: #101024;
+  --secondary-app-color: #1a1938;
+}
+
+.navclass {
+  background: linear-gradient(
+    90deg,
+    var(--primary-app-color),
+    var(--secondary-app-color)
+  );
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Hamburger icon */
+.hamburger {
+  width: 26px;
+  height: 2px;
+  background: white;
+  display: block;
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 2px;
+  background: white;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    var(--primary-app-color),
+    var(--secondary-app-color)
+  );
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.35s ease;
+  z-index: 1100;
+}
+
+.sidebar a {
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.sidebar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Open state */
+.open {
+  left: 0;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+}

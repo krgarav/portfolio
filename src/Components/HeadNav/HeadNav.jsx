@@ -1,63 +1,47 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import classes from "./HeadNav.module.css";
-import { Button } from "react-bootstrap";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
+
 const HeadNav = () => {
   const navigate = useNavigate();
-  const headClass = `d-flex flex-row justify-content-between  px-10 py-4 ${classes.navclass}`;
-  const logoutHandler = () => {
-    navigate("/", { replace: true });
-  };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const headClass = `navbar px-4 py-3 ${classes.navclass}`;
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <Fragment>
-      <nav className={`navbar navbar-expand-sm ${headClass}`} id="nav">
-        <div className="container-fluid">
-          {/* Logo / Brand */}
-          <a className="navbar-brand text-white ml-10" href="#home">
-            KUMAR GAURAV
-          </a>
-
-          {/* Hamburger toggler */}
+      <nav className={headClass}>
+        <div className="container-fluid d-flex align-items-center">
+          {/* Hamburger */}
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNav"
-            aria-controls="mainNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            style={{ position: "absolute", left: "20px" }}
+            onClick={toggleMenu}
           >
-            <span
-              className="navbar-toggler-icon"
-              style={{
-                backgroundImage: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>")`,
-              }}
-            ></span>
+            <span className={classes.hamburger}></span>
           </button>
 
-          {/* Collapsible nav links */}
-          <div className="collapse navbar-collapse" id="mainNav">
-            <div className="navbar-nav ms-auto text-white   ">
-              <a href="#home" className="nav-link mx-4 text-white">
-                Home
-              </a>
-              <a href="#aboutMe" className="nav-link mx-4 text-white">
-                About Me
-              </a>
-              <a href="#resume" className="nav-link mx-4 text-white">
-                Resume
-              </a>
-              <a href="#testimonial" className="nav-link mx-4 text-white">
-                Testimonial
-              </a>
-              <a href="#contactMe" className="nav-link mx-4 text-white">
-                Contact Me
-              </a>
-            </div>
-          </div>
+          {/* Brand */}
+          <a className="navbar-brand text-white ms-3" href="#home">
+            KUMAR GAURAV
+          </a>
         </div>
       </nav>
+
+      {/* Sidebar */}
+      <div className={`${classes.sidebar} ${isOpen ? classes.open : ""}`}>
+        <a href="#home" onClick={closeMenu}>Home</a>
+        <a href="#aboutMe" onClick={closeMenu}>About Me</a>
+        <a href="#resume" onClick={closeMenu}>Resume</a>
+        <a href="#testimonial" onClick={closeMenu}>Testimonial</a>
+        <a href="#contactMe" onClick={closeMenu}>Contact Me</a>
+      </div>
+
+      {/* Overlay */}
+      {isOpen && <div className={classes.overlay} onClick={closeMenu}></div>}
     </Fragment>
   );
 };
