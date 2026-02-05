@@ -88,11 +88,24 @@ function Resume() {
               </span>
             </div>
           </div>
-          <div className="col-lg-8 col-md-8 resume-right-section ">
-            {education === true && <Education />}
-            {work === true && <Work />}
-            {skills === true && <Skills />}
-            {projects === true && <Projects />}
+          <div className="col-lg-8 col-md-8 resume-right-section">
+            <div
+              className="resume-content"
+              key={
+                education
+                  ? "education"
+                  : work
+                    ? "work"
+                    : skills
+                      ? "skills"
+                      : "projects"
+              }
+            >
+              {education && <Education />}
+              {work && <Work />}
+              {skills && <Skills />}
+              {projects && <Projects />}
+            </div>
           </div>
         </div>
       </div>

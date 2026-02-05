@@ -82,3 +82,72 @@
 .resume-right-section::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
+@media (max-width: 768px) {
+  /* Container */
+  .resume-new-section {
+    width: 95% !important;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  /* Left section becomes top tabs */
+  .resume-left-section {
+    flex-direction: row !important;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 0;
+  }
+
+  /* Icons column */
+  .resume-left-section .bg-new {
+    flex-direction: row;
+    padding: 0 10px;
+  }
+
+  .icon-span {
+    margin: 12px;
+    font-size: 1.2rem;
+  }
+
+  /* Menu items */
+  .resume-options-items {
+    width: 80dvw;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .selected {
+    width: auto;
+  }
+
+  /* Right section */
+  .resume-right-section {
+    max-height: unset;
+    padding: 16px;
+    white-space: normal;
+  }
+
+  /* Outer section */
+  .resume-outer-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    clip-path: none;
+  }
+}
+
+
+.resume-content {
+  animation: slideIn 0.35s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
