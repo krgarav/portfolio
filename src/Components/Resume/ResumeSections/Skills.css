@@ -1,15 +1,130 @@
-.progress-some{
-    background: red;
-    height: 20px;
-    width: 200px;
+/* =====================
+   SKILL CARD
+===================== */
+.skill-card {
+  background: linear-gradient(180deg, #ffffff, #f8f9fb);
+  border-radius: 16px;
+  padding: 16px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  animation: cardEnter 0.6s ease forwards;
+  animation-delay: calc(var(--i) * 0.1s);
+  opacity: 0;
 }
-.progress-new{
-    background: #1c1c1c;
-    height: 20px;
+
+/* Top accent strip */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary-app-color),
+    var(--secondary-app-color)
+  );
 }
-.language{
-    font-family: "Ubuntu";
-    color: black;
-    font-size: 1.3rem;
-    text-transform: capitalize;
+
+/* Hover effect */
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================
+   HEADER
+===================== */
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Icon */
+.skill-icon {
+  font-size: 1.3rem;
+  color: #fff;
+  background: linear-gradient(
+    -45deg,
+    var(--primary-app-color),
+    var(--secondary-app-color)
+  );
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: rotate(6deg) scale(1.1);
+}
+
+/* Skill name */
+.skill-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1c1c1c;
+}
+
+/* =====================
+   BADGE
+===================== */
+.skill-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.65rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.skill-badge.frontend {
+  background: linear-gradient(135deg, #0d6efd, #3d8bfd);
+}
+
+.skill-badge.backend {
+  background: linear-gradient(135deg, #198754, #3ddc97);
+}
+
+.skill-badge.ui {
+  background: linear-gradient(135deg, #6f42c1, #9b6dff);
+}
+
+/* =====================
+   ENTRY ANIMATION
+===================== */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   MOBILE
+===================== */
+@media (max-width: 768px) {
+  .skill-card {
+    padding: 14px;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+    padding: 7px;
+  }
 }

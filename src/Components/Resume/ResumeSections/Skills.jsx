@@ -1,56 +1,46 @@
 import React from "react";
 import "./Skills.css";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaBootstrap,
+  FaNodeJs,
+} from "react-icons/fa";
+import { SiMongodb } from "react-icons/si";
+
 export default function Skills() {
-  const value = [
-    {
-      text: "HTML",
-      percentage: "80%",
-    },
-    {
-      text: "CSS",
-      percentage: "80%",
-    },
-    {
-      text: "Javascript",
-      percentage: "80%",
-    },
-    {
-      text: "Bootstrap",
-      percentage: "70%",
-    },
-    {
-      text: "MongoDB",
-      percentage: "70%",
-    },
-    {
-      text: "Node js",
-      percentage: "40%",
-    },
-    {
-      text: "React js",
-      percentage: "50%",
-    },
+  const skills = [
+    { name: "HTML", category: "Frontend", icon: <FaHtml5 /> },
+    { name: "CSS", category: "Frontend", icon: <FaCss3Alt /> },
+    { name: "JavaScript", category: "Frontend", icon: <FaJs /> },
+    { name: "React", category: "Frontend", icon: <FaReact /> },
+    { name: "Bootstrap", category: "UI", icon: <FaBootstrap /> },
+    { name: "Node.js", category: "Backend", icon: <FaNodeJs /> },
+    { name: "MongoDB", category: "Backend", icon: <SiMongodb /> },
   ];
 
   return (
-    <div>
-      <div>
-        <div className="row">
-          {value.map((value, index) => {
-            return (
-              <div key={index} className="col-lg-6 col-md-6 col-sm-12 my-2">
-                <span className="language">{value.text}</span>
-                <div className="progress-some">
-                  <div
-                    className="progress-new"
-                    style={{ width: `${value.percentage}` }}
-                  ></div>
-                </div>
-              </div>
-            );
-          })}
+    <div className="row">
+      {skills.map((skill, index) => (
+        <div
+          key={index}
+          className="col-lg-4 col-md-6 col-sm-12 my-3"
+          style={{ "--i": index }}
+        >
+          <div className="skill-card shadow-sm">
+            <div className="skill-card-header">
+              <span className="skill-icon">{skill.icon}</span>
+              <span className="skill-name">{skill.name}</span>
+            </div>
+
+            <span className={`skill-badge ${skill.category.toLowerCase()}`}>
+              {skill.category}
+            </span>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   );
 }
