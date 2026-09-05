@@ -27,7 +27,7 @@ function Resume() {
         <span className="subheading">My formal Bio Details</span>
         <div
           className="resume-new-section row "
-          style={{ width: "70%", marginInline: "auto" }}
+          style={{ width: "80%", marginInline: "auto" }}
         >
           <div className="col-lg-4 col-md-4 resume-left-section d-flex flex-row px-0 shadow-lg">
             <div className="d-flex flex-column bg-new text-light">

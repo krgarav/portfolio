@@ -1,46 +1,93 @@
+
 import React from "react";
 import "./Skills.css";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaBootstrap,
-  FaNodeJs,
-} from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
+import skillGroups from "./skillsData";
 
 export default function Skills() {
-  const skills = [
-    { name: "HTML", category: "Frontend", icon: <FaHtml5 /> },
-    { name: "CSS", category: "Frontend", icon: <FaCss3Alt /> },
-    { name: "JavaScript", category: "Frontend", icon: <FaJs /> },
-    { name: "React", category: "Frontend", icon: <FaReact /> },
-    { name: "Bootstrap", category: "UI", icon: <FaBootstrap /> },
-    { name: "Node.js", category: "Backend", icon: <FaNodeJs /> },
-    { name: "MongoDB", category: "Backend", icon: <SiMongodb /> },
-  ];
-
   return (
-    <div className="row">
-      {skills.map((skill, index) => (
-        <div
-          key={index}
-          className="col-lg-4 col-md-6 col-sm-12 my-3"
-          style={{ "--i": index }}
-        >
-          <div className="skill-card shadow-sm">
-            <div className="skill-card-header">
-              <span className="skill-icon">{skill.icon}</span>
-              <span className="skill-name">{skill.name}</span>
+    <div className="skills-section">
+
+      {/* Intro */}
+      <div className="skills-intro">
+        <div>
+          <span className="skills-eyebrow">
+            TECHNICAL EXPERTISE
+          </span>
+
+          <h2>
+            Skills & <span>Technologies</span>
+          </h2>
+
+          <p>
+            A collection of technologies and tools I use to design,
+            develop and maintain modern web applications.
+          </p>
+        </div>
+      </div>
+
+      {/* Skill Groups */}
+      <div className="skill-groups">
+        {skillGroups.map((group, groupIndex) => (
+          <div className="skill-group" key={groupIndex}>
+
+            <div className="skill-group-heading">
+              <div>
+                <h3>{group.title}</h3>
+                <p>{group.description}</p>
+              </div>
+
+              <span className="skill-count">
+                {String(group.skills.length).padStart(2, "0")}
+              </span>
             </div>
 
-            <span className={`skill-badge ${skill.category.toLowerCase()}`}>
-              {skill.category}
-            </span>
+            <div className="skills-grid">
+              {group.skills.map((skill, index) => {
+                const Icon = skill.icon;
+
+                return (
+                  <div
+                    className="professional-skill-card"
+                    key={skill.name}
+                    style={{ "--i": index }}
+                  >
+                    <div className="skill-main">
+
+                      <div
+                        className="skill-icon"
+                        style={{ color: skill.color }}
+                      >
+                        <Icon />
+                      </div>
+
+                      <div className="skill-info">
+                        <h4>{skill.name}</h4>
+
+                        <div className="skill-meta">
+                          <span>{skill.level}</span>
+                          <span>{skill.experience}</span>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div className="skill-progress">
+                      <span
+                        className={`progress-fill ${skill.level
+                          .toLowerCase()
+                          .replace(" ", "-")}`}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
     </div>
   );
 }
+
