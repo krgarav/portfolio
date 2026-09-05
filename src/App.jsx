@@ -1,7 +1,5 @@
-import Auth from "./Pages/Authentication/Auth";
 import { Routes, Route,Navigate } from "react-router-dom";
 import Portfolio from "./Pages/Portfolio/Portfolio";
-import "./App.css";
 function App() {
   return (
     <Routes>

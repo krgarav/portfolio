@@ -1,31 +1,12 @@
-body {
-  --black: #111111;
-  --white: #fdfdfd;
-  --green: #22cc88;
-  --blue: #0055ff;
-  --purple: #8855ff;
-  --red: #ff0055;
-  --orange: #ee4444;
-  --yellow: #ffcc00;
-  --mustard: #ffaa00;
-
-  --background: var(--white);
-  --accent: var(--black);
-
-  /* margin: 0;
-  padding: 0;
-  background-color: var(--background);
-  color: var(--accent);
-  padding-bottom: 100px; */
-}
+:root { --ink:#0b1120; --ink-soft:#111b31; --paper:#f5f7fb; --surface:#fff; --muted:#667085; --line:#dfe5ee; --accent:#b7f36b; --accent-dark:#78a83b; }
 
 .progress-bars {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 10px;
-  background: var(--red);
+  height: 4px;
+  background: var(--accent);
   transform-origin: 0%;
   z-index: 9999;
 }
