@@ -1,25 +1,24 @@
+/* eslint-disable react/prop-types */
 import { Fragment } from "react";
-import { Card } from "react-bootstrap";
 
 const Cards = (props) => {
   return (
     <Fragment>
-      <Card style={{ width: "60%" }}>
-        <Card.Img
-          variant="top"
+      <div className="w-3/5 overflow-hidden rounded-xl bg-white shadow">
+        <img
           style={{
             height: "200px",
           }}
           src={props.imageurl}
         />
-        <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
+        <div className="p-4">
+          <h3>{props.title}</h3>
+          <p className="mb-2 text-slate-500">
             {props.email}
-          </Card.Subtitle>
-          <Card.Text>{props.body}</Card.Text>
-        </Card.Body>
-      </Card>
+          </p>
+          <p>{props.body}</p>
+        </div>
+      </div>
     </Fragment>
   );
 };

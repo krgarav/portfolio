@@ -5,7 +5,6 @@ import AboutMe from "../../Components/Aboutme/Aboutme";
 import Resume from "../../Components/Resume/Resume";
 import ConatctMe from "../../Components/Contactme/Contactme";
 import Footer from "../../Components/Footer/Footer";
-import Testimonial from "../../Components/Testimonial/Testimonial";
 import { motion, useScroll } from "framer-motion";
 import "./portfolio.css";
 import Project from "../../Components/Projects/Project";
@@ -22,7 +21,7 @@ const Portfolio = () => {
       <Herosection />
       <AboutMe />
       <Resume />
-      {/* <Project /> */}
+      <Project />
       {/* <Testimonial /> */}
 
       <ConatctMe />

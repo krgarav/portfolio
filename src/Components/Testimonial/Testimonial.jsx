@@ -1,6 +1,4 @@
 import { Fragment, useEffect, useState } from "react";
-import { Carousel } from "react-bootstrap";
-import classes from "./Testimonial.module.css";
 import Cards from "../Cards/Cards";
 const Testimonial = () => {
   const [comments, setComments] = useState([]);
@@ -30,10 +28,10 @@ const Testimonial = () => {
   console.log(comments);
   const cardItems = comments.map((item, index) => {
     return (
-      <Carousel.Item key={index}>
-        <div className={classes.dummy}>
+      <div key={index} className="flex flex-col items-center gap-4 py-8">
+        <div className="h-[80vh] w-full bg-[var(--ink)]">
             <br/>
-          <div className={classes.cards}>
+          <div className="relative ml-[30%]">
             <Cards
               title={item.name}
               body={item.body}
@@ -43,20 +41,20 @@ const Testimonial = () => {
           </div>
         </div>
 
-        <Carousel.Caption>
+        <div className="text-center text-white">
           <h3>{item.name}</h3>
           <p>{item.email}</p>
-        </Carousel.Caption>
-      </Carousel.Item>
+        </div>
+      </div>
     );
   });
   return (
     <Fragment>
-      <div className={classes.testbox} id="testimonial">
-        <div className="d-flex flex-column">
+      <div className="bg-[var(--paper)] px-[8%] py-24 text-[var(--ink)]" id="testimonial">
+        <div className="flex flex-col">
           <span className="heading">Testimonial</span>
           <span className="subheading">What client says about my work?</span>
-          <Carousel>{cardItems}</Carousel>
+          <div>{cardItems}</div>
         </div>
       </div>
     </Fragment>
