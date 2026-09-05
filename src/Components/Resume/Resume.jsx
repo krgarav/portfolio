@@ -25,12 +25,12 @@ function Resume() {
             {tabs.map((tab) => {
               const active = activeTab === tab.id;
               const Icon = tab.icon;
-              return <button key={tab.id} type="button" onClick={() => setActiveTab(tab.id)} className={`flex min-h-[76px] flex-col items-center justify-center gap-2 border-0 px-2 py-3 text-[11px] font-bold transition md:min-h-0 md:flex-row md:justify-start md:gap-3 md:px-5 md:py-5 md:text-left ${active ? "bg-[var(--ink)] text-[var(--accent)]" : "bg-transparent text-slate-300 hover:bg-white/10 hover:text-white"}`}><Icon aria-hidden="true" className="text-base md:text-lg" /><span>{tab.label}</span></button>;
+              return <button key={tab.id} type="button" onClick={() => setActiveTab(tab.id)} className={`flex min-h-[76px] flex-col items-center justify-center gap-2 border-0 px-2 py-3 text-[11px] font-bold transition md:min-h-0 md:flex-row md:justify-start md:gap-3 md:px-5 md:py-5 md:text-left ${active ? "bg-[var(--ink)] text-[var(--accent)]" : "bg-transparent text-slate-300 hover:bg-white/10 hover:text-white"}`}><Icon aria-hidden="true" className="text-base md:text-lg" /><span className="text-lg">{tab.label}</span></button>;
             })}
           </nav>
         </aside>
           <div className="min-h-[360px] min-w-0 max-h-[520px] overflow-x-hidden overflow-y-auto bg-[var(--ink-soft)] p-5 text-white md:p-8">
-          <div key={activeTab} className="animate-[slideIn_.35s_ease-out]">{content[activeTab]}</div>
+          <div key={activeTab} className="animate-[slideIn_.35s_ease-out] text-xl">{content[activeTab]}</div>
         </div>
       </div>
       </div>

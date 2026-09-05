@@ -8,6 +8,7 @@ import Footer from "../../Components/Footer/Footer";
 import { motion, useScroll } from "framer-motion";
 import "./portfolio.css";
 import Project from "../../Components/Projects/Project";
+import Testimonial from "../../Components/Testimonial/Testimonial"
 const Portfolio = () => {
   const { scrollYProgress } = useScroll();
   return (

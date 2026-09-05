@@ -6,7 +6,7 @@ const Herosection = () => {
   const capabilities = [
     { phrase: "Frontend craft, backend clarity", label: "FRONTEND ENGINEERING", description: "Building accessible, responsive interfaces that feel natural to use." },
     { phrase: "React / Node / MongoDB", label: "FULL-STACK DEVELOPMENT", description: "Connecting polished product experiences to dependable backend systems." },
-    { phrase: "From idea to shipped product", label: "PRODUCT DELIVERY", description: "Turning rough ideas into useful, scalable experiences." },
+    { phrase: "From idea to shipped product", label: "PRODUCT DELIVERY", description: "Turning rough ideas into useful, scalable experiences that create lasting impact." },
   ];
   const [phraseIndex, setPhraseIndex] = useState(0);
   useEffect(() => {
@@ -33,9 +33,9 @@ const Herosection = () => {
             <p className="mt-3 max-w-[560px] text-base leading-7 text-slate-300">I design and engineer reliable, human-centered web experiences with modern JavaScript tools.</p>
             <div className="mt-4 flex flex-wrap justify-start gap-3">
               <a href="#contactMe" className="rounded-md border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 text-sm font-bold text-[var(--ink)] transition hover:bg-lime-200">Hire me</a>
-              <a href="https://res.cloudinary.com/dje269eh5/image/upload/v1671718981/resume_cv_wiq064.pdf" download="resume.pdf"><button className="rounded-md border border-slate-500 bg-transparent px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[var(--ink)]">View resume ↗</button></a>
+              <a href="https://res.cloudinary.com/dje269eh5/image/upload/v1671718981/resume_cv_wiq064.pdf" download="resume.pdf" target="blank"><button className="rounded-md border border-slate-500 bg-transparent px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[var(--ink)]">View resume ↗</button></a>
             </div>
-            <div className="mt-7 flex gap-8 border-t border-white/10 pt-4 text-xs text-slate-400"><div><strong className="block font-display text-xl text-white">4+</strong>years learning &amp; building</div><div><strong className="block font-display text-xl text-white">10+</strong>projects shipped</div><div><strong className="block font-display text-xl text-white">∞</strong>curiosity</div></div>
+            <div className="mt-7 flex gap-8 border-t border-white/10 pt-4 text-xs text-slate-400"><div><strong className="block font-display text-xl text-white">6+</strong>years learning &amp; building</div><div><strong className="block font-display text-xl text-white">10+</strong>projects shipped</div><div><strong className="block font-display text-xl text-white">∞</strong>curiosity</div></div>
           </div>
           <div className="relative flex justify-center lg:pl-10"><div className="absolute inset-8 rounded-full bg-[var(--accent)]/10 blur-3xl" /><div className="relative w-full max-w-[460px] rounded-3xl border border-white/10 bg-white/[.03] p-3 shadow-2xl backdrop-blur-sm"><div className="flex items-center justify-between border-b border-white/10 px-3 pb-2 text-[10px] font-bold tracking-[.16em] text-slate-500"><span>{capabilities[phraseIndex].label}</span><span className="text-[var(--accent)]">0{phraseIndex + 1} / 03</span></div><lottie-player class="h-[330px] w-full" src="https://lottie.host/63aff3b1-da76-4880-840c-41ec002ae5e7/83ifNfKh27.json" background="transparent" speed="1" loop autoplay></lottie-player><div className="flex items-center justify-between gap-4 px-3 pb-2 text-sm text-slate-400"><span>{capabilities[phraseIndex].description}</span><div className="flex shrink-0 gap-1.5">{capabilities.map((capability, index) => <button key={capability.label} type="button" aria-label={`Show capability ${index + 1}`} onClick={() => setPhraseIndex(index)} className={`h-2 w-2 rounded-full transition ${index === phraseIndex ? "bg-[var(--accent)]" : "bg-slate-600 hover:bg-slate-400"}`} />)}</div></div></div></div>
         </div>

@@ -21,7 +21,7 @@ const HeadNav = () => {
 
           {/* Brand */}
           <a className="text-lg font-extrabold tracking-[.12em] text-white" href="#home">
-            KG<span>.</span>
+            KUMAR GAURAV
           </a>
           <div className="ml-auto hidden items-center gap-6 md:flex">
             <span className="mr-2 inline-flex shrink-0 items-center gap-2 rounded-full border border-[var(--accent)]/25 bg-[var(--accent)]/5 px-3 py-1.5 text-[10px] font-bold tracking-wider text-slate-300"><span className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_8px_var(--accent)]" /> OPEN TO WORK</span>
